@@ -1,0 +1,1 @@
+/home/albert/.vscode-server/data/Machine/settings.json

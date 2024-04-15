@@ -8,6 +8,8 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rclcpp_lifecycle REQUIRED)
+find_package(example_interfaces REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 
@@ -43,12 +45,16 @@ add_executable(service_client src/service_client.cpp)
 ament_target_dependencies(service_client rclcpp)
 target_link_libraries(service_client "${cpp_typesupport_target}")
 
+add_executable(lifecycle_number_publisher src/lifecycle_number_publisher.cpp)
+ament_target_dependencies(lifecycle_number_publisher rclcpp rclcpp_lifecycle example_interfaces)
+
 
 install(TARGETS
   topic_publisher
   topic_subscription
   service_server
   service_client
+  lifecycle_number_publisher
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()

@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="tutorial_cpp_pkg" exec="lifecycle_number_publisher" name="my_number_publisher" />
+    <node pkg="tutorial_py_pkg" exec="lifecycle_node_manager">
+        <param name="managed_node_name" value = "my_number_publisher" />
+    </node>
+</launch>

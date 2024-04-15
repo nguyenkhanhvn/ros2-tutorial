@@ -24,6 +24,8 @@ setup(
             "topic_subscription = tutorial_py_pkg.topic_subscription:main",
             "service_server = tutorial_py_pkg.service_server:main",
             "service_client = tutorial_py_pkg.service_client:main",
+            "lifecycle_number_publisher = tutorial_py_pkg.lifecycle_number_publisher:main",
+            "lifecycle_node_manager = tutorial_py_pkg.lifecycle_node_manager:main",
         ],
     },
 )

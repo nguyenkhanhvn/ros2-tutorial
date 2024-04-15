@@ -1,0 +1,11 @@
+<launch>
+    <node pkg="lifecycle_py" exec="move_robot_server" name="move_robot_server_a">
+        <param name="robot_name" value="A" />
+    </node>
+    <node pkg="lifecycle_py" exec="move_robot_server" name="move_robot_server_b">
+        <param name="robot_name" value="B" />
+    </node>
+    <node pkg="lifecycle_py" exec="move_robot_startup">
+        <param name="managed_node_names" value="['move_robot_server_a', 'move_robot_server_b']" />
+    </node>
+</launch>

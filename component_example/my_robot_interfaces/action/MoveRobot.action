@@ -1,7 +1,0 @@
-int64 position # m
-int64 velocity # m/s
----
-int64 position
-string message
----
-int64 current_position

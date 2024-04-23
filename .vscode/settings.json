@@ -6,9 +6,9 @@
         "**/CVS": true,
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
-        "**/build": true,
-        "**/install": true,
-        "**/log": true
+        // "**/build": true,
+        // "**/install": true,
+        // "**/log": true
     },
     "python.autoComplete.extraPaths": [
         "${workspaceFolder}/install/my_robot_interfaces/local/lib/python3.10/dist-packages",

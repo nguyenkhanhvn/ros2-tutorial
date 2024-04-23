@@ -10,6 +10,7 @@
         "/home/albert/ws/ros2/ros2-tutorial/install/my_robot_interfaces/include/**",
         "/opt/ros/humble/include/**",
         "/home/albert/ws/ros2/ros2-tutorial/bumperbot/bumperbot_controller/include/**",
+        "/home/albert/ws/ros2/ros2-tutorial/bumperbot/bumperbot_cpp_examples/include/**",
         "/home/albert/ws/ros2/ros2-tutorial/bumperbot/bumperbot_description/include/**",
         "/home/albert/ws/ros2/ros2-tutorial/src/actions_cpp/include/**",
         "/home/albert/ws/ros2/ros2-tutorial/src/executors_cpp/include/**",

@@ -1,0 +1,33 @@
+controller_manager: # Node name
+  ros__parameters:
+    update_rate: 30 # Has to be an integer otherwise errors are encountered
+
+    demo_joint_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    demo_diff_controller:
+      type: diff_drive_controller/DiffDriveController
+
+
+demo_diff_controller:
+  ros__parameters:
+    
+    publish_rate: 50.0 # Has to be a double otherwise errors are encountered
+
+    base_frame_id: base_footprint
+
+    left_wheel_names: ['left_wheel_joint']
+    right_wheel_names: ['right_wheel_joint']
+    wheel_separation: 0.134
+    wheel_radius: 0.0335
+
+    # Obtained from https://wiki.ros.org/diff_drive_controller
+    pose_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
+    twist_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0] 
+
+    # Whether the input has a time stamp or not
+    use_stamped_vel: false
+
+    # Odometry fused with IMU is published by robot_localization, so no need to publish a TF
+    # based on encoders alone (https://wiki.ros.org/diff_drive_controller)
+    enable_odom_tf: true

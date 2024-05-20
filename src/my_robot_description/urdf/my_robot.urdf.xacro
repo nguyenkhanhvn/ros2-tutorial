@@ -5,6 +5,7 @@
     <xacro:include filename="simple_robot_car.urdf.xacro"/>
     <xacro:include filename="simple_robot_car_gazebo.urdf.xacro"/>
 
-    <xacro:include filename="camera.xacro"/>
+    <!-- <xacro:include filename="camera.xacro"/> -->
+    <xacro:include filename="lidar.xacro"/>
 
 </robot>

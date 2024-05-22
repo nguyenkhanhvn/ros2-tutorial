@@ -15,6 +15,7 @@ def generate_launch_description():
     pkg_path = get_package_share_path("my_robot_bringup")
     nav2_params_file = os.path.join(pkg_path, 'config', 'nav2_params.yaml')
     rviz_config_path = os.path.join(pkg_path, 'rviz', 'nav2_demo.rviz')
+    # map_path = os.path.join(pkg_path, 'maps', 'turtlebot3_world.yaml')
     map_path = os.path.join(pkg_path, 'maps', 'demomap.yaml')
 
 

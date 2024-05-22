@@ -2,7 +2,6 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <xacro:property name="base_length" value="0.3" />
-    <xacro:property name="base_width" value="0.3" />
     <xacro:property name="base_height" value="0.1" />
     <xacro:property name="wheel_radius" value="0.05" />
     <xacro:property name="wheel_length" value="0.025" />
@@ -34,19 +33,18 @@
     <link name="base_link">
         <visual>
             <geometry>
-                <box size="${base_length} ${base_width} ${base_height}" />
+                <cylinder radius="${base_length / 2.0}" length="${base_height}" />
             </geometry>
             <origin xyz="0 0 ${base_height / 2.0}" rpy="0 0 0"></origin>
             <material name="blue"></material>
         </visual>
         <collision>
             <geometry>
-                <box size="${base_length} ${base_width} ${base_height}" />
+                <cylinder radius="${base_length}" length="${base_height}" />
             </geometry>
             <origin xyz="0 0 ${base_height / 2.0}" rpy="0 0 0"></origin>
         </collision>
-        <xacro:box_inertia  m="5.0" l="${2*base_length}" w="${2*base_width}"  h="${2*base_height}"
-                            xyz="0 0 ${base_height / 2.0}" rpy="0 0 0" />
+        <xacro:cylinder_inertia m="5.0" r="${2*base_length}" h="${2*base_height}" xyz="0 0 0" rpy="0 0 0" />
     </link>
 
     <xacro:wheel_link prefix="right" />
@@ -80,14 +78,14 @@
     <joint name="base_right_wheel_joint" type="continuous">
         <parent link="base_link" />
         <child link="right_wheel_link" />
-        <origin xyz="${-base_length*0 / 4.0} ${-base_width / 2.0 - wheel_length / 2.0} 0" rpy="0 0 0" />
+        <origin xyz="0 ${-base_length / 2.0 - wheel_length / 2.0} 0" rpy="0 0 0" />
         <axis xyz="0 1 0" />
     </joint>
 
     <joint name="base_left_wheel_joint" type="continuous">
         <parent link="base_link" />
         <child link="left_wheel_link" />
-        <origin xyz="${-base_length*0 / 4.0} ${base_width / 2.0 + wheel_length / 2.0} 0" rpy="0 0 0" />
+        <origin xyz="0 ${base_length / 2.0 + wheel_length / 2.0} 0" rpy="0 0 0" />
         <axis xyz="0 1 0" />
     </joint>
 

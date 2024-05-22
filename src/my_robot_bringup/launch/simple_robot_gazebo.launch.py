@@ -13,8 +13,21 @@ def generate_launch_description():
     
     urdf_path = os.path.join(my_robot_description_path, 'urdf', 'my_robot.urdf.xacro')
     rviz_config_path = os.path.join(my_robot_description_path, 'rviz', 'simple_robot_car.rviz')
+    # gazebo_world_path = os.path.join(pkg_path, 'worlds', 'turtlebot3_world.world')
     gazebo_world_path = os.path.join(pkg_path, 'worlds', 'test.world')
     
+    # Launch configuration variables specific to simulation
+    x_pose = LaunchConfiguration('x_pose')
+    y_pose = LaunchConfiguration('y_pose')
+
+    declare_x_position_cmd = DeclareLaunchArgument(
+        'x_pose', default_value='0.5',
+        description='Specify namespace of the robot')
+
+    declare_y_position_cmd = DeclareLaunchArgument(
+        'y_pose', default_value='0.5',
+        description='Specify namespace of the robot')
+
     
     robot_description = ParameterValue(Command(['xacro ', urdf_path]), value_type=str)
     
@@ -32,7 +45,7 @@ def generate_launch_description():
     spawn_robot_node = Node (
         package="gazebo_ros",
         executable="spawn_entity.py",
-        arguments=["-topic", "robot_description", "-entity", "my_robot"],
+        arguments=["-topic", "robot_description", "-entity", "my_robot", '-x', x_pose, '-y', y_pose,],
         # output="screen"
     )
     
@@ -44,6 +57,8 @@ def generate_launch_description():
     
     
     return LaunchDescription([
+        declare_x_position_cmd,
+        declare_y_position_cmd,
         robot_state_publisher_node,
         start_gazebo,
         spawn_robot_node,

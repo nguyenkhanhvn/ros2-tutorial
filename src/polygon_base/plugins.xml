@@ -1,0 +1,5 @@
+<library path="polygon_base">
+  <class type="polygon_base::InsidePolygon" base_class_type="polygon_base::RegularPolygon">
+    <description>This is a InsidePolygon plugin.</description>
+  </class>
+</library>

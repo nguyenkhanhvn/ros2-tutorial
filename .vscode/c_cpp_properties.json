@@ -7,6 +7,7 @@
       },
       "includePath": [
         "/home/albert/ws/ros2/ros2-tutorial/install/tutorial_cpp_pkg/include/**",
+        "/home/albert/ws/ros2/ros2-tutorial/install/my_robot_behavior_tree/include/**",
         "/home/albert/ws/ros2/ros2-tutorial/install/my_robot_interfaces/include/**",
         "/opt/ros/humble/include/**",
         "/home/albert/ws/ros2/ros2-tutorial/bumperbot/bumperbot_controller/include/**",
@@ -14,7 +15,12 @@
         "/home/albert/ws/ros2/ros2-tutorial/bumperbot/bumperbot_description/include/**",
         "/home/albert/ws/ros2/ros2-tutorial/src/actions_cpp/include/**",
         "/home/albert/ws/ros2/ros2-tutorial/src/executors_cpp/include/**",
+        "/home/albert/ws/ros2/ros2-tutorial/src/full_coverage_path_planner/include/**",
+        "/home/albert/ws/ros2/ros2-tutorial/src/my_robot_behavior_tree/include/**",
+        "/home/albert/ws/ros2/ros2-tutorial/src/my_robot_controller/include/**",
         "/home/albert/ws/ros2/ros2-tutorial/src/my_robot_interfaces/include/**",
+        "/home/albert/ws/ros2/ros2-tutorial/src/polygon_base/include/**",
+        "/home/albert/ws/ros2/ros2-tutorial/src/polygon_plugins/include/**",
         "/usr/include/**"
       ],
       "name": "ROS",

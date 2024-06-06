@@ -36,7 +36,6 @@ private:
     }
 
 private:
-    rclcpp::Service<tutorial_cpp_pkg::srv::TestService>::SharedPtr server_;
     std::thread thread_;
 };
 

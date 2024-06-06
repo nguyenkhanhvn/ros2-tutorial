@@ -10,9 +10,9 @@
       <uri>model://sun</uri>
     </include>-->
 
-    <scene>
+    <!--scene>
       <shadows>false</shadows>
-    </scene>
+    </scene-->
 
     <gui fullscreen='0'>
       <camera name='user_camera'>
